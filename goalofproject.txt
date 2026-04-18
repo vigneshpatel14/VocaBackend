@@ -1,0 +1,1098 @@
+AI-Powered Language Coach Platform — Comprehensive PRD & Multilingual Curriculum (English, German, French)
+•
+
+Last updated 4 days ago at 11:33 pm
+
+
+
+
+TL;DR
+
+
+The AI-Powered Language Coach is a real-time, voice-interactive language learning platform serving schools (B2B), colleges, and exam aspirants. Students converse with a personalized AI agent (voice, persona, feedback tuned by age), receive detailed real-time feedback, and unlock a language-agnostic, CEFR-aligned curriculum in English, German, and French (with full expansion capability). The platform deeply adapts to four student segments: Primary School, Middle/High School, College/Undergraduate, and IELTS/Exam Aspirants—providing each with segment-optimized curriculum, assessment, agent persona, gamification, and reporting. AI powers all feedback, adaptivity, and analytics. Success hinges on deep classroom fit, measurable progress, and school subscription renewals.
+
+
+
+Goals
+
+
+Product & Business Goals
+
+
+Deliver a student-centered, speak-to-AI platform with measurable fluency gains.
+Become the default speaking/vocabulary practice platform for 100+ schools in 24 months.
+Achieve >75% annual renewal rate through demonstrable skill improvement and reporting.
+Launch with English, German, French (scalable to any language) and segment-specific curricula.
+Support real classroom integration: teacher dashboard, assignments, class analytics, parent portal.
+
+
+Pedagogical Goals
+
+
+Ensure every student advances at least one CEFR level per academic year.
+Prepare exam-track students for top scores (IELTS/TOEFL/TestDaF/DELF).
+Engage through age-appropriate AI, gamification, and adaptive micro-lessons.
+Empower teachers with data-driven progress tools and actionable feedback.
+
+
+Platform Goals
+
+
+Support voice, gamification, school management, and AI-powered assessment as core features.
+Operate securely, privately (COPPA, GDPR) and seamlessly with school systems (LMS API).
+Build all content, agent logic, and curriculum structure to be language-agnostic.
+
+
+User Stories
+
+
+1. Primary School Student (Ages 6–11)
+
+
+As a young learner, I want to play word games with a friendly AI animal, so I enjoy learning.
+As a student, I want quick, colorful feedback and positive encouragement for every answer.
+As a student, I want to show my parents the stars I earned and which words I learned.
+As a teacher, I want to assign daily vocabulary packs and track word mastery for my whole class.
+
+
+2. Middle/High School Student (Ages 11–18)
+
+
+As a teen, I want to practice debates or discussions on school and world topics with an AI coach that “gets” my age.
+As a student, I want honest, constructive feedback and clear tips to improve my fluency and expression.
+As a teacher, I want to set homework, monitor progress over time, and prepare my students for state/board exams.
+
+
+3. College/Undergrad Student (Ages 18–22)
+
+
+As a college learner, I want roleplays and professional scenarios for interviews, presentations, and campus life.
+As a teacher, I want to assign group speaking labs, monitor portfolio quality, and encourage real-world speaking skills.
+
+
+4. Exam Aspirant (All Ages)
+
+
+As an IELTS candidate, I want to simulate real exam parts and receive band-accurate, granular AI scoring.
+As a coach/institute, I want mock test scheduling, batch progress, predictive analytics and reporting for cohorts.
+
+
+5. School Administrator
+
+
+As an admin, I want to add classes, teachers, students at scale and download ROI/usage reports for renewals.
+
+
+6. Parent
+
+
+As a parent, I want to see clear progress: time spent, new words, stars, and improvement each week.
+
+
+Functional Requirements
+
+
+Multilingual, Segment-Aware Curriculum Engine
+
+
+Language-agnostic topic+skill-based modules for CEFR Pre-A1 → C2
+English, German, French at launch; dynamic content swap per language
+Segment adaptation: content, voice, persona, feedback tuned by age/track
+
+
+AI Conversational Coach — Core Loop
+
+
+Real-time, low-latency voice interaction (WebRTC + ASR)
+Persona-driven AI avatars (cartoon mascot, peer coach, mentor, examiner)
+In-conversation live feedback: pronunciation, lexicon, grammar, encouragement
+End-of-session report: score breakdown, mistake memory, next steps
+
+
+Gamification Layer
+
+
+Segment-specific: stickers/stars for primary, XP & badges for older, portfolio for college, band tracker for exam
+Quests, streaks, class leaderboard, monthly and seasonal events
+
+
+Adaptive Learning & Assessment
+
+
+Adaptive placement test maps to CEFR per language
+Micro-lesson assignment based on recurring mistakes & performance trend
+Vocabulary SRS (spaced repetition scheduling) per student
+Remediation and acceleration branching
+
+
+Teacher & School Features
+
+
+Dashboards: class views, assignment workflows, individual/group analytics
+Assignment/review: set topics, speaking tasks, quiz; playback student responses; annotate feedback
+Automated weekly and per-student reporting (including “struggling students” alerts)
+Admin features: user/role mgmt, billing, white-label, LMS interoperability
+
+
+Privacy, Compliance, and Security
+
+
+All under-13 voice/identity data COPPA compliant; all users GDPR compliant
+Multi-tenant SaaS: strict data segmentation per school
+Options for regional hosting, downloadable “offline” practice
+
+
+User Experience
+
+
+Student UX Flow (Core AI Conversation)
+
+
+Student logs in (school SSO, parent invite, self-signup), selects assigned/chosen topic.
+Meets age/persona-matched AI agent:
+Primary (e.g. "Lingo" the owl): Greets with a rhyme or joke, speaks slowly, uses lots of encouragement.
+Middle/High ("Alex"/"Max"/"Claire"): Friendly, guiding “cool” coach persona.
+College ("Jordan”/”Lukas"/"Sophie"): Mature peer/mentor, offers professional tips.
+Exam ("Coach Aria"/"ExamBot"): Formal, efficient, references exam rubrics, gives targeted feedback.
+AI initiates interactive conversation (voice-first): prompts student with scenario, question, or challenge.
+Student responds; AI listens, displays or speaks live targeted feedback:
+Primary: “Try again! Can you say ‘yellow banana’ louder?” [stars fly out]
+High/College: “Great word! But 'climate change has affect' — should be 'effects.' Let's try together.”
+Exam: “You hesitated after 'On the other hand' — delay lowers fluency score. Try to link your points.”
+AI adapts dialogue complexity in-session: scaffolds down if errors, increases challenge if fluent.
+After session (5–10 min Primary, up to 30 min Exam), instant report card slides in:
+Levels/Segments: Fluency, Pronunciation, Vocabulary, Grammar, Coherence, Task achievement
+3 Common errors, 3 “Wow!” moments, urgent improvement tip, unlocked badge/XPs
+Primary: animated sticker for collection; Exam: updated band prediction and actionable plan.
+Teacher/Parent: dashboard shows all session data, summaries, comparative progress, with drilldown to mistakes, strengths, streaks.
+
+
+Teacher UX Flow
+
+
+Plug classes in via bulk import or manual entry; add students and assign language(s)
+Use assignment builder to push topics and tasks per class/segment/language
+See progress heatmap (per student/topic/skill), review flagged students, deep-dive session recordings or transcripts
+Download/generate custom parent PDFs, export data for class analysis
+Use “IELTS readiness meter” for exam segments
+
+
+Parent/College Admin UX Flow
+
+
+View student’s daily/weekly performance, game rewards
+Notifications for progress, streaks, milestones, improvement
+
+
+Product Narrative
+
+
+At every school, language teachers and admins face the challenge of driving meaningful speaking and vocabulary progress for diverse students. The AI-Powered Language Coach platform turns this into a joyful, measurable journey: primary kids collect words with their friendly AI animal, middle/high students debate global topics and prep for board exams, college students unlock job skills, and exam aspirants target their band with professional precision. All fluency, all personalized; all trackable. For teachers, every session and response is explained—not just scored. For schools, impact is visible in dashboards and renewal value. Every language, every learner, every school—mastery, one conversation at a time.
+
+
+
+Success Metrics
+
+
+Student:
+
+Avg. speaking time per week >30 minutes
+CEFR level-up rate >70% per academic year
+Retention (active use) >80% semester-on-semester
+School/Teacher:
+
+Assignment completion >90%
+Class-wide average improvement in AI score (fluency, vocab) >30% in 1 semester
+null.80% satisfaction in teacher/admin surveys
+
+Platform/Business:
+
+Renewal >75%
+<5% monthly churn
+Weekly product/feature NPS >8.0/10
+
+
+Technical Considerations
+
+
+Real-Time Voice Processing: WebRTC or equivalent; audio locally buffered for low-latency experience
+Multilingual ASR: Fine-tuned models for child/teen accents (English, German, French; open API for more languages)
+AI Feedback Engine: Grammar and vocabulary NLP; error spotter; style- and persona-tuned TTS feedback; segment-optimized rubric selection
+Persona-based TTS: Character/age-matched synthetic voices (cartoonish for kids, real for adults)
+Gamification: Real-time data sync for leaderboards, badge unlocks; local fallback in case of network issues
+Privacy & Security: COPPA lock for primary (no PII outside parent/teacher view), GDPR for EU, session record encryption
+Multi-School SaaS: Database and resource isolation, admin panel for all org-level config
+LMS Interoperability: Google Classroom, Teams, Canvas—REST API and SSO options
+
+
+Milestones
+
+
+Phase
+
+Timeline (Weeks)
+
+Milestone
+
+Key Deliverables
+
+1
+
+1–4
+
+Core platform, English A1–B2, AI Core
+
+User mgmt, live AI chat, reporting, teacher dash
+
+2
+
+5–8
+
+College, Exam tracks, Gamification
+
+College/Exam curricula, XP, badges, leaderboards
+
+3
+
+9–12
+
+German, French, Advanced Dashboards
+
+Multilingual support, parent/admin dashboards
+
+4
+
+13–16
+
+Adaptive Engine, Analytics, Beta Schools
+
+Micro-lessons, analytics, school pilots
+
+
+
+Team: 1 PM, 2 Full-stack Engineers, 1 AI/ML, 1 Designer, 1 Trilingual Curriculum Specialist
+
+
+
+Detailed Curriculum & Learning System by Segment
+
+
+SEGMENT 1: PRIMARY SCHOOL (Ages 6–11) — ENGLISH / GERMAN / FRENCH
+
+
+Agent Persona: Cartoon Mascot
+
+
+English: “Lingo the Owl”
+German: “Bär the Bear”
+French: “Renard the Fox”
+Friendly, supportive, simple words, big animated feedback (“Stellar! Star for you!”).
+
+
+CEFR Levels: Pre-A1 → A2
+
+
+Ten Thematic Chapters per Language
+
+
+(Each chapter: 40–60 words/phrases, pictures, audio, with translations in other 2 launch languages; all features language-agnostic)
+
+
+
+Chapter
+
+Example Vocabulary (EN/DE/FR)
+
+Sample Sentences (EN / DE / FR)
+
+Key Skills
+
+Hello & Me
+
+hello / hallo / bonjour, name, friend, happy, I am, you are
+
+“My name is Anna.” – “Ich heiße Anna.” – “Je m’appelle Anna.”
+
+Self-intro, greetings, simple Q&A
+
+My Family
+
+mother, father, sister, brother, Opa, Cousine, ma mère, mon frère
+
+“This is my brother.” – “Das ist mein Bruder.” – “C’est mon frère.”
+
+Family talk, describing others
+
+Animals & Nature
+
+dog, cat, bird, Fisch, Baum, animal, oiseau, forêt
+
+“The dog is big.”
+
+Describing animals, sounds, colors
+
+Food & Drink
+
+apple, bread, Wasser, pomme, pain, milk, boire, manger
+
+“I like apples.”
+
+Likes/dislikes, ordering food
+
+My School & Classroom
+
+teacher, desk, Schüler, livre, tableau noir, chair, écrire, lesen
+
+“Can I have a pencil, please?”
+
+Asking for stuff, routines
+
+Colors, Shapes, Numbers
+
+red / rot / rouge, circle, two, sechs, bleu, carré
+
+“The triangle is yellow.”
+
+Shapes, numbers, compare/describe
+
+Days, Weather, Seasons
+
+Monday, Regen, pluie, sun, windy, snow, hiver, Sommer
+
+“It’s sunny today.”
+
+Weather chat, days, simple plans
+
+My Body & Health
+
+eye, nose, Kopf, jambe, main, mouth, hurt, sickness, laufen
+
+“My head hurts.”
+
+Health, describing feelings
+
+Clothes & Shopping
+
+shirt, Hose, jupe, pants, Schuhe, chapeau, acheter, kaufen
+
+“I wear a red shirt.”
+
+Shopping basics, describing clothes
+
+My Town & Places
+
+street, Bank, bibliothèque, shop, park, Schule, Kirche, marché
+
+“Where is the park?”
+
+Directions, places, giving guidance
+
+
+
+Each Chapter Features:
+
+
+
+Visual vocab cards: word, picture, translation, audio for each language
+Sentence builder games
+Agent-led speaking tasks (e.g. "Describe this picture", "What color is the tree?")
+Listening tasks (e.g., “Which animal says ‘woof’?”)
+Practice games (flashcards, find-the-word, simple matching)
+Assessment: oral task (recorded), vocab quiz (star rating), parent/teacher report
+
+
+Example Speaking Prompt
+
+
+
+"Can you tell Renard what you see in this picture?" (child describes scene, gets live feedback: "Tres bien! Das ist richtig! Star for you!")
+
+
+
+Gamification:
+
+
+
+Collectable word stickers
+Animated celebrations for new mastery
+Class “vocab challenge” leaderboard
+Daily streaks (e.g., 5 days unlocks “Mini Mastérien” badge)
+
+
+Parent Dashboard:
+
+
+
+Tracks: stars earned, time spent, words learned, review of “favorite” words with the child
+
+
+Teacher Features:
+
+
+
+Assign "word of the day", themed packs
+See class mastery rates
+Print sticker awards
+
+
+SEGMENT 2: MIDDLE & HIGH SCHOOL (Ages 11–18) — ENGLISH / GERMAN / FRENCH
+
+
+Agent Persona: Cool Coach (Alex/Max/Claire)
+
+
+Friendly, direct, encourages challenge and independence.
+
+
+
+CEFR Levels: A2 → B2
+
+
+Ten Thematic, Age-Appropriate Chapters
+
+
+Chapter
+
+Sample Vocabulary (EN/DE/FR, 80–120 words per topic)
+
+Sentence/Grammar Foci
+
+Core Speaking Tasks
+
+School Life & Subjects
+
+homework, biology, Prüfung, note, matières, directeur
+
+“I am good at math”; comparatives, giving reasons
+
+Describe day, explain a rule
+
+Tech & Social Media
+
+app, Nachrichten, cyber-sécurité, upload, Bildschirm, compte
+
+Explaining pros/cons; making suggestions
+
+Debate: “Phones in class?”
+
+Environment & Climate
+
+pollution, Erde, recyclage, Wetterlage, sauver, savewater
+
+Conditional (“If we recycle…”)
+
+Argue for/against change
+
+Sports & Health
+
+coach, Wettbewerb, gym, blessure, tournoi, Schwimmen, courir
+
+Frequency, reporting events
+
+Report on match, health tips
+
+Culture & Traditions
+
+tradition, fête, Brauch, Erntefest, coutume, carnaval
+
+Describing customs
+
+Present a festival
+
+Career & Future Goals
+
+intern, Bewerbung, rêve, Zukunft, Unternehmer, métier
+
+Future tenses, possibility
+
+“Where do you see yourself?”
+
+Media & Entertainment
+
+film, Buch, critique, feuilleton, Schauspieler, musique
+
+Expressing opinions, comparisons
+
+Movie/book review
+
+Travel & Adventure
+
+ticket, Zug, réservation, frontière, Abenteuer, fliegen
+
+Giving advice, recounting experiences
+
+Describe trip, ask advice
+
+Opinion & Debate
+
+argue, point of view, contre, pro, Meinung, donner son avis
+
+Linking expressions, agreeing/disagreeing
+
+Debate with agent/classmate
+
+Global Issues
+
+poverty, derechos, mondiale, Frieden, mundial, population, planète
+
+Passive voice, cause/effect
+
+Express solution, discuss impact
+
+
+
+Features per Chapter:
+
+
+
+Vocabulary lists (EN/DE/FR 80–120 words; with context sentences, audio)
+Sentence/grammar focus: comparatives, conditionals, passive, indirect speech
+Speaking tasks:
+
+1–3 minute discussions
+Roleplays/scenarios (e.g., “Simulate a school council debate”)
+Listening tasks: short news/audio reports, Q&A
+Practice activities: sentence arrangement, error correction, synonym matches
+Assessment: AI-rated oral, scenario quiz, fluency+accuracy score
+
+
+Gamification:
+
+
+
+XP for all activities
+Badges for streaks, vocabulary milestones, debate wins, “Daily Discussion”
+Class leaderboards (weekly XP)
+
+
+Teacher Dashboard:
+
+
+
+Assign group/homework
+Monitor class and individual progress, identify weak areas
+“Struggling student” alerts
+
+
+SEGMENT 3: COLLEGE & UNDERGRADUATE (Ages 18–22) — ENGLISH / GERMAN / FRENCH
+
+
+Agent Persona: Professional Peer Mentor (Jordan/Lukas/Sophie)
+
+
+Empowering, uses real-world contexts, coaches on formal/informal register.
+
+
+
+CEFR Levels: B1 → C1
+
+
+Ten Advanced/Professional Chapters
+
+
+Chapter
+
+Advanced Sample Vocab (EN/DE/FR, 120–150 words)
+
+Key Patterns/Skills
+
+Core Speaking Tasks
+
+Academic Discussions
+
+thesis, Hypothese, analyse, argument, exposé
+
+Synthesis, argument structure
+
+Structured debate, defend thesis
+
+Professional Communication
+
+networking, Geschäft, entreprise, Branche, mail
+
+Polite/formal registers, requests
+
+Formal email, negotiate, meeting roleplay
+
+Research & Analysis
+
+study, Untersuchung, graphique, Grafik, statistiques
+
+Data narration, explaining data
+
+Present research, interpret chart
+
+Ethics & Society
+
+ethic, Gerechtigkeit, valeurs, Verantwortung, moral
+
+Defining position, critiquing
+
+Ethics debate, case discussion
+
+Innovation & Technology
+
+digital, Fortschritt, intelligence, numérique
+
+Predicting trends, discuss impact
+
+Pitch idea/pro/con, discuss effect
+
+Economics & Business
+
+market, Finanz, budget, microentreprise, entrepreneur
+
+Explaining concepts, trade-offs
+
+Simulate business pitch, Q&A
+
+Psychology & Behavior
+
+motivation, Verhalten, psychologie, émotivité
+
+Discussing human factors, cause/effect
+
+Analyze scenario, give advice
+
+Global Politics
+
+diplomacy, Politik, législation, Abkommen, campagne
+
+Persuasive speech, synthesis
+
+Respond to a political scenario
+
+Presentation Skills
+
+slides, introduction, réponse, Publikum, auditoire
+
+Rhetorical techniques, clarity
+
+Present on topic, peer review
+
+Interview/Career Readiness
+
+CV, entretien, Referenz, Soft Skills
+
+Professional answers, STAR method
+
+Mock interview, job case round
+
+
+
+For each chapter:
+
+
+
+Advanced, contextual vocabulary (EN/DE/FR)
+Scenarios from campus/work: speaking, presenting, case solving
+Error correction for register/formality
+Portfolio: record/publish best responses, receive AI peer review
+Listening to professional dialogues/speeches
+Rubric: coherence, argument quality, register, lexicon, advanced grammar
+
+
+Gamification:
+
+
+
+Badges for milestones: Presentation Pro, Analyst, STAR Interview
+Portfolio unlocks
+Skill mastery omits childish elements; tracks professional achievements
+
+
+Teacher/College Admin:
+
+
+
+Assign group sessions
+Portfolio review and annotation for grades/feedback
+
+
+SEGMENT 4: IELTS / TOEFL / EXAM ASPIRANTS (All Ages) — ENGLISH / GERMAN / FRENCH
+
+
+Agent Persona: Strict Examiner (ExamBot/Coach Aria)
+
+
+Formal tone, models exam interview intensity, uses true exam format; tracks band/score and improvement.
+
+
+
+CEFR: B1 → C2 (aligns to exam bands)
+
+
+Exam-Specific Tracks (Per Language):
+
+
+A. ENGLISH: IELTS Speaking
+
+
+
+Part 1 (Interview): 30+ sample familiar topic Qs (work, hometown, study, food, weather, etc.)
+Part 2 (Cue Card): 15 cue cards with 1-min prep, 2-min delivery.
+
+E.g., “Describe an achievement you are proud of.”
+Model responses (bands 5/6/7/8+)
+Part 3 (Discussion): 20+ abstract/follow-up threads (e.g., “How can governments improve education?”)
+
+Practice with follow-up Qs, challenge mode for higher bands
+
+
+B. ENGLISH: TOEFL Speaking
+
+
+
+Task 1 (Independent): 10 practice prompts (e.g., “What’s the most important animal in your country and why?”)
+Tasks 2–4 (Integrated): 8 scenarios combining listening/reading and spoken summary or opinion.
+
+
+C. GERMAN: TestDaF / Goethe-Zertifikat
+
+
+
+Rollenspiel, Aussage, Diskussion tasks; topic packs mapped to official exam rubrics; model answers/feedback
+
+
+D. FRENCH: DELF/DALF
+
+
+
+Préparation à l’oral, sujet guidé, expression d’une opinion. Model questions, mini-bacs blancs (mock oral exams), analysis at each CEFR band.
+
+
+For all tracks:
+
+
+
+Timed, exam-real recording flows
+AI rate on exam rubric (e.g., IELTS 1–9; TOEFL 0–30)
+Error type flagging, trend tracking
+Predictive readiness chart (“1 band to target”)
+“Remedial booster” for recurring errors (“5-week band up” course)
+
+
+AI SCORING RUBRIC (Universal, Tied to All Segments/Levels)
+
+
+Dimension
+
+0–9 Band (IELTS) Explanation
+
+Example Error Feedback
+
+Segment Adaptivity
+
+Fluency & Coherence
+
+Hesitation, pausing, logical structure
+
+“Try to link your ideas and use fewer fillers.”
+
+Slower for children
+
+Pronunciation & Intelligibly
+
+Phonemes, word stress, clarity
+
+“Say ‘three’ — place the tongue between teeth: th-”
+
+Focus sound-by-sound
+
+Vocabulary Range & Accuracy
+
+Word choice, collocation, appropriateness
+
+“Instead of ‘good,’ try ‘delicious’ for food.”
+
+Child/adult register
+
+Grammar Range & Accuracy
+
+Tenses, sentence length, agreement
+
+“Check verb: ‘He go’ → ‘He goes’.”
+
+Bonus support for kids
+
+Task Response/Relevance
+
+Did student answer prompt fully and clearly?
+
+“Add more detail: ‘Why do you like this movie?’”
+
+Simpler for children
+
+
+
+AI Feedback Examples (by Segment):
+
+
+
+Primary:
+
+“Great! But try saying ‘I have two sisters,’ not ‘I have two sister.’ Let’s say it together!”
+Middle/High:
+
+“Nice try! Use ‘because’ to connect your ideas for a higher score.”
+College:
+
+“You synthesized main points well, but your use of passive voice was inconsistent.”
+Exam:
+
+“Band 7.0: Good fluency, some hesitation, and four minor grammar slips. Focus on complex sentences for Band 8.”
+
+
+Gamification System (Tailored by Segment)
+
+
+Feature
+
+Primary
+
+Middle/High
+
+College
+
+Exam
+
+XP/Streaks
+
+Stars, stickers, streak bonus
+
+XP, streaks, class leaderboard
+
+Achievement badges, portfolio
+
+Band improvement chart/streak
+
+Badges
+
+“First 10 Words”, “Super Streak”
+
+“Debate Pro”, “1000 XP Hero”
+
+“Presentation Master”, “Analyst”
+
+“Band 7 Achieved”, “Mock Test Hero”
+
+Missions
+
+“Say five fruit names”, “Try twice today”
+
+“2 debates/week”, “100 vocab”
+
+“Upload best interview”
+
+“4 mocks in a week”
+
+Leaderboards
+
+Class/team
+
+Class/school/global
+
+Class/cohort only
+
+Batch/score-based
+
+Celebrations
+
+Animated, confetti/sliding mascot
+
+Modern, dynamic XP popups
+
+Professional, subtle
+
+Progress charts
+
+
+
+Teacher Dashboard (Core B2B Differentiator)
+
+
+Class Management: Add students, assign languages, organize groups
+Assignment Builder: Choose topic (by age/language/skill); set speaking duration, due dates
+Progress Analytics:
+
+Class summary heatmap (skill-by-topic)
+“Struggling” students flagged for last 2 weeks
+Individual reports (trend lines for speaking, vocab, grammar)
+Review Tools: Play back student recordings, annotate, override or confirm AI grades
+Parent Reports: Auto-PDFs, per-student; teacher notes incl.
+Exam Readiness: IELTS/TOEFL/German/French exam readiness meters per student/group
+Reports/Exports: CSV all levels; PDF by student/class
+School Admin: Org user management, billing, renewals, impact analysis by semester
+
+
+Adaptive Learning Engine
+
+
+At Registration: Adaptive placement test spanning receptive/productive (maps to CEFR, by language)
+Every Session: AI recalibrates pace, task type, challenge level based on:
+
+Score trends, mistake recurrence, speed of mastery
+Surfaced “error memory” for 5 common errors (e.g., mispronounced ‘th’, wrong tense for past)
+SRS (spaced repetition): resurfaces missed/forgotten words on optimal interval
+Paths: Automatically routes into
+
+Accelerated – unlocks higher-level tasks, debates, challenge badges
+Standard – default progression
+Remedial – triggers micro-lessons, foundational review, word games for stuck skills
+Personalization: Encouragement and instructions tuned to confidence level (e.g. hesitant but correct speakers encouraged for speed/volume, over-confident with error get precision drills)
+Teacher View: Adaptive “path” per student visible, assignment override allowed
+
+
+Multi-Language, Language-Agnostic Content Architecture
+
+
+Each language: complete set of themes, skills, grammar mapped to CEFR, but content (words, examples, agent persona/voice) is per language and per segment
+Add new language: plug into category/topic/level shell, instantly fits into platform/school/teacher/analytics flow
+Exam tracks: added per language, mapped to most common test (English/IELTS-TOEFL, German/TestDaF-Goethe, French/DELF-DALF)
+Persona/Voice: Each language gets native synthetic voices, persona styling (“Renard” for French primary, etc.)
+
+
+Appendices: Sample Curriculum Tables
+
+
+1. CEFR/Exam Score Mapping Table
+
+
+CEFR
+
+IELTS Band
+
+TOEFL iBT
+
+Goethe/TestDaF
+
+DELF/DALF
+
+Descriptor
+
+A1
+
+1–2.5
+
+0–20
+
+A1 (16–30)
+
+A1
+
+Basic phrases
+
+A2
+
+3–3.5
+
+21–40
+
+A2 (31–60)
+
+A2
+
+Family, routines
+
+B1
+
+4–5
+
+41–60
+
+B1 (61–90)
+
+B1
+
+Everyday, school/work
+
+B2
+
+5.5–6.5
+
+61–80
+
+B2 (91–120)
+
+B2
+
+Argument, detail
+
+C1
+
+7–8
+
+81–100
+
+C1 (121–164)
+
+C1
+
+Fluent, nuanced
+
+C2
+
+8.5–9
+
+101–120
+
+C2 (165–180)
+
+C2
+
+Near-native, abstract
+
+
+
+2. Sample Badge Catalog
+
+
+Badge Name
+
+Unlocked By
+
+Segment(s)
+
+Word Collector
+
+Learn 100 new words
+
+All
+
+Streak Star
+
+21-day active streak
+
+All
+
+Debate Pro
+
+Complete 10 debate missions
+
+Middle/High, Coll.
+
+Exam Master
+
+4 full exam mocks (Band 7+ avg)
+
+Exam Track
+
+Super Sticker Album
+
+Collect all stickers in a category
+
+Primary
+
+Portfolio Pioneer
+
+5 best recordings uploaded
+
+College
+
+
+
+END OF DOCUMENT
+
+
+This blueprint is designed to be handed directly to curriculum, engineering, and UX teams for rapid, focused development and school-facing deployment.
+

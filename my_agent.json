@@ -1,0 +1,61 @@
+{
+  "agent_config": {
+    "agent_name": "My Gemini Voice Assistant",
+    "agent_welcome_message": "Hello! I am your AI assistant. How can I help you today?",
+    "tasks": [
+      {
+        "task_type": "conversation",
+        "toolchain": {
+          "execution": "parallel",
+          "pipelines": [["transcriber", "llm", "synthesizer"]]
+        },
+        "tools_config": {
+          "input": { "provider": "default", "format": "wav" },
+          "output": { "provider": "default", "format": "wav" },
+          "transcriber": {
+            "provider": "deepgram",
+            "model": "nova-2",
+            "language": "en",
+            "stream": true,
+            "endpointing": 400
+          },
+          "llm_agent": {
+            "agent_flow_type": "streaming",
+            "agent_type": "simple_llm_agent",
+            "llm_config": {
+              "model": "gemini-2.5-flash",
+              "provider": "google",
+              "max_tokens": 150,
+              "temperature": 0.7,
+              "agent_flow_type": "streaming"
+            }
+          },
+          "synthesizer": {
+            "provider": "deepgram",
+            "stream": true,
+            "buffer_size": 40,
+            "audio_format": "pcm",
+            "provider_config": {
+              "voice": "aura",
+              "voice_id": "zeus",
+              "model": "aura-zeus-en"
+            }
+          }
+        },
+        "task_config": {
+          "hangup_after_silence": 20,
+          "optimize_latency": true,
+          "use_fillers": false,
+          "number_of_words_for_interruption": 2
+        }
+      }
+    ]
+  },
+  "agent_prompts": {
+    "task_0": {
+      "system_prompt": "You are a friendly and helpful AI voice assistant. Keep your responses SHORT and CONVERSATIONAL — ideally 1 to 2 sentences — since the user is on a voice call and cannot read long text. Be natural, warm, and concise.",
+      "user": "",
+      "assistant": ""
+    }
+  }
+}
